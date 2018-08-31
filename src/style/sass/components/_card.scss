@@ -1,0 +1,86 @@
+.card {
+  padding: 2rem 3rem;
+  margin: 5rem 2rem 0;
+  border-radius: .2rem;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, .3);
+  --box-shadow: 0 0px 0px 4px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: transform 0s, opacity 0s;
+  transform: translateY(10rem);
+  color: white;
+
+  &--show-up {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition: transform .2s, opacity .2s;
+
+    .card__icon {
+      transform: translateY(0rem);
+      transition: transform .4s, opacity .2s;
+    }
+  }
+
+  &__content {
+    text-align: right;
+    padding: 0 0 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px #999;
+
+    p {
+      font-size: 2.5rem;
+      font-weight: lighter;
+      font-family: "Helvetica neue";
+    }
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    font-family: "Anton";
+  }
+
+  &__icon {
+    float: left;
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
+    padding: 2rem 0;
+    margin-top: -4rem;
+    background-color: #0f88b9;
+    background-image: linear-gradient(130deg, darken(#76d6ff, 30%), darken(#76d6ff, 35%));
+    text-align: center;
+    border-radius: .2rem;
+    transform: translateY(-4rem);
+
+    // Find better way to write this shit
+    box-shadow: 0 12px 20px -10px rgba(15, 104, 191, 0.3),
+                0 4px 20px 0 rgba(0, 0, 0, 0.12),
+                0 7px 8px -5px rgba(0, 115, 212, 0.2);
+
+    &--green {
+      background-image: linear-gradient(130deg, darken(#28c689, 0%), darken(#28c689, 5%));
+
+      // Find better way to write this shit
+      box-shadow: 0 12px 20px -10px rgba(20, 212, 0, 0.3),
+                  0 4px 20px 0 rgba(0,0,0,.12),
+                  0 7px 8px -5px rgba(20, 212, 0, 0.2);
+    }
+
+    &--red {
+      background-image: linear-gradient(130deg, darken(#ed6060, 0%), darken(#ed6060, 5%));
+
+      // Find better way to write this shit
+      box-shadow: 0 12px 20px -10px rgba(212, 30, 0, 0.3),
+                  0 4px 20px 0 rgba(0,0,0,.12),
+                  0 7px 8px -5px rgba(212, 30, 0, 0.2);
+    }
+  }
+
+  &__more-infos {
+    color: #ccc;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    font-family: "Helvetica neue";
+    text-align: left;
+  }
+}

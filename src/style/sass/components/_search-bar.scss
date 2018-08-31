@@ -1,0 +1,90 @@
+.search-bar {
+  color:white;
+
+  &__container {
+    position: relative;
+    margin-top: 3rem;
+    text-align: center;
+    .search-bar__input, button {
+      box-shadow: 0 0 15px 1px #555;
+    }
+  }
+
+  &__input-container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__input {
+    height: 3.5rem;
+    width: 50rem;
+    background: rgba(255,255,255,.7);
+    border: solid 1px transparent;
+    border-right: solid 1px white;
+    box-shadow: none;
+    padding: 0 2rem;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    border-radius: 100px 0 0 100px;
+
+    &:focus {
+      box-shadow: none;
+
+      & + button {
+        box-shadow: none;
+        border-radius: 100px;
+        transition: border-radius .3s;
+      }
+    }
+
+
+  }
+
+  &__label {
+    color:white;
+    padding: 2rem;
+  }
+
+  &--small {
+
+    .search-bar__container {
+      margin-top: 0rem;
+
+      .search-bar__input {
+        height: 3rem;
+        width: 30rem;
+        border-radius: 100px;
+        border: solid 1px white;
+        border-right: solid 1px white;
+        font-size: 1rem;
+        box-shadow: none;
+
+        &:focus {
+          border: solid 1px #999;
+        }
+
+        @include respond(phone) {
+          width: 25rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  button {
+    font-size: 1.5rem;
+    height: 3.5rem;
+    width: 10rem;
+    padding: 0 3rem;
+    // Originally line-height: 3.5rem;
+    // I don't understand why it doesn't align with this value
+    // To Align things better not using inline and line-height combination
+    // Specifically when dealing with mix content.
+    line-height: 3rem;
+    border: solid 1px transparent;
+    border-radius: 0 100px 100px 0;
+    background: linear-gradient(top,#4387fd,#4683ea);
+    color: white;
+    vertical-align: middle;
+  }
+}

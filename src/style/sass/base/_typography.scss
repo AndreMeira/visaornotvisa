@@ -1,0 +1,76 @@
+body {
+  font-family: 'Lato';
+}
+
+.heading {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 5rem 0rem 5rem;
+
+  h1, h2, h3, h4 {
+      font-family: "Oswald";
+      color: rgb(118, 214, 255);
+      vertical-align: middle;
+      line-height: 4.5rem;
+  }
+
+  &--full {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 4.5rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    color: #EE7475;
+  }
+
+  p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    color:rgb(127, 127, 127);
+  }
+}
+
+.main-heading {
+  &__primary {
+    color: white;
+    font-size: 4.5rem;
+    font-family: "Lobster";
+    display: inline-block;
+    padding: 1rem 2rem;
+    position: relative;
+    margin-bottom: 3rem;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2.5rem;
+      border-bottom: solid .3rem;
+      width: 50%;
+      left: 25%;
+    }
+  }
+
+  &__secondary {
+    margin-top: 2.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: lighter;
+    font-family: "Anton";
+  }
+}
+
+.notice {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: lighter;
+}

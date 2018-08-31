@@ -1,0 +1,54 @@
+.spacer {
+  // to refactor
+  min-height: 30rem;
+}
+.row {
+    margin: 0 auto;
+    @include clearfix;
+
+    [class^="col-"] {
+        float: left;
+
+        // be more flexible than just that
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
+    }
+
+    .col-40-on-100 {
+      width: 40%;
+    }
+
+    .col-60-on-100 {
+      width: 60%;
+    }
+
+    .col-1-of-2 {
+        width: 50%;
+    }
+
+    .col-1-of-3 {
+        width: calc(100% / 3);
+    }
+
+    .col-1-of-8 {
+        width: calc(100% / 8);
+    }
+
+    .col-2-of-3 {
+        width: calc((2 * 100%) / 3);
+    }
+
+    .col-1-of-4 {
+        width: 25%;
+    }
+
+    .col-2-of-4 {
+        width: 50%;
+    }
+
+    .col-3-of-4 {
+        width: 75%;
+    }
+
+}
