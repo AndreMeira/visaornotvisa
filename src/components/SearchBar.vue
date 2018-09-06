@@ -149,13 +149,13 @@ export default {
        if (this.suggestions[this.arrowCounter]) {
           this.navigateToCountry(
             this.suggestions[this.arrowCounter].title,
-            this.suggestions[this.arrowCounter].id,
+            this.suggestions[this.arrowCounter].id
           );
           e.target.blur();
        } else if (this.suggestions[0]) {
          this.navigateToCountry(
            this.suggestions[0].title,
-           this.suggestions[0].id,
+           this.suggestions[0].id
          );
          e.target.blur();
        }
