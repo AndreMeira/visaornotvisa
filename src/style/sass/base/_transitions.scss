@@ -1,0 +1,27 @@
+
+.slide-enter-active, .slide-leave-active {
+  overflow: hidden;
+  transition: transform .5s, opacity .5s;
+
+  > div {
+    transition: transform .3s, opacity .5s;
+  }
+}
+.slide-enter /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  // transform: translateY(100%);
+
+  > div {
+    transform: translateY(-3rem);
+    // transform: translateY(-100%);
+  }
+}
+
+.slide-enter-active {
+  top:0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  position: fixed;
+  z-index: 10;
+}

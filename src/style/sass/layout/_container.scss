@@ -6,4 +6,14 @@
 .card-container {
   display: inline-block;
   width: 33%;
+
+  @include respond(phone) {
+    display: block;
+    width: inherit;
+  }
+}
+
+.width-limit {
+  margin: auto;
+  max-width: 1000px;
 }

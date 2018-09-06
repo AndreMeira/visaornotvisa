@@ -5,6 +5,7 @@
   width: 100%;
   overflow: hidden;
   background-color: darken(#88AFDD, 10%);
+  --background-color: #3f7790;
   opacity: 1;
   z-index: 30;
 
@@ -52,26 +53,8 @@
   }
 
   &__content {
-    height: 100vh;
-
     > div {
-      position: absolute;
-      top:50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      width: 100%;
-      text-align: center;
-      min-height: 300px;
-
       h1 {
-        color: #f0f0f0;
-        font-size: 4.5rem;
-        font-family: "Lobster";
-        display: inline-block;
-        padding: 1rem 2rem;
-        position: relative;
-        margin-bottom: 3rem;
-
         &:after {
           content: "";
           position: absolute;
@@ -81,15 +64,9 @@
           left: 25%;
           opacity: .3;
           animation: "progess-bar-title" 1s linear infinite;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          bottom: -2.5rem;
-          border-bottom: solid .3rem;
-          width: 50%;
-          left: 25%;
+          @include respond(phone) {
+            bottom: -1.5rem;
+          }
         }
       }
     }

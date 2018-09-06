@@ -6,20 +6,19 @@
     @before-leave="setScreenState('closing')"
     @after-leave="setScreenState('close')">
 
-    <section v-if="show" id="screener" class="screener">
+    <div v-if="show" id="screener" class="screener">
       <div class="screener__background" :style="{backgroundImage}"></div>
-      <div class="screener__content">
-        <div>
-          <h1>{{title}}</h1>
+      <div class="screener__content full-height-container">
+        <div class="main-heading">
+          <h1 class="main-heading__primary">{{title}}</h1>
         </div>
       </div>
-    </section>
+    </div>
   </transition>
 </template>
 
 <script>
-import {Mediator} from '@/Mediator';
-import countries from '@/data/countries-sum-up';
+import Poster from '@/components/Poster';
 
 export default {
   name: 'Screener',
@@ -37,6 +36,7 @@ export default {
   },
 
   components: {
+    Poster
   },
 
   data () {

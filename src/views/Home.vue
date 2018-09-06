@@ -4,7 +4,31 @@
       :title="title"
       :backgroundImage="backgroundImage">
       <template slot="heading-content">
-        <SearchBar></SearchBar>
+        <div class="home-search">
+            <SearchBar></SearchBar>
+        </div>
+      </template>
+      <template slot="poster-content">
+        <div class="card-row card-row--home">
+          <div class="card-container">
+            <Card
+              title="Laos"
+              value="Un pays relax"
+              :show="true"></Card>
+          </div>
+          <div class="card-container">
+            <Card
+              title="Thailande"
+              value="Le pays du sourire"
+              :show="true"></Card>
+          </div>
+          <div class="card-container">
+            <Card
+              title="Maroc"
+              value="Le paradis du tourisme"
+              :show="true"></Card>
+          </div>
+        </div>
       </template>
     </Poster>
 
@@ -67,6 +91,7 @@
 
 </template>
 <script>
+import Card   from '@/components/common/Card';
 import Poster from '@/components/Poster';
 import SearchBar from '@/components/SearchBar';
 // import HomeComponent from '@/components/Home';
@@ -81,6 +106,7 @@ export default {
    *
    */
   components: {
+    Card,
     Poster,
     SearchBar
     // HomeComponent

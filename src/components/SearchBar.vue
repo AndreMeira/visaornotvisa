@@ -22,7 +22,9 @@
           @input="searchCountry($event.target.value)"
           v-on:focus="$emit('input', $event.target.value)"
         />
-        <button v-if="!small">GO</button>
+        <button>
+          <font-awesome-icon icon="search"/>
+        </button>
 
       </div>
 
@@ -62,7 +64,11 @@
 
     </div>
     <h2 v-if="!small" class="search-bar__label">
-        <label class="notice">Choisis ta destination</label>
+        <label class="notice">
+          Choisis ta destination
+          <span><font-awesome-icon icon="arrow-up" /></span>
+
+        </label>
     </h2>
 
   </div>
@@ -167,4 +173,11 @@ export default {
 </script>
 
 <style>
+.notice span {
+  animation: moveInBottom 1.2s infinite ease-in-out 1s;
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 1rem;
+  opacity: 0;
+}
 </style>

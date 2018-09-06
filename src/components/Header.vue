@@ -10,17 +10,26 @@
         <div class="header__headline">
           <a>Pour savoir si tu as besoin d'un visa ou pas</a>
         </div>
-        <div class="header__nav">
-          <div class="header__search" :class="{'home':isHome}">
-              <SearchBar small="true"></SearchBar>
-          </div>
 
+        <div class="header__nav">
           <div class="header__links">
-            <a>Explore</a>
+            <router-link
+              :to="{ name: 'explore', params: {} }">
+              Explore
+            </router-link>
+            <!-- <router-link
+              :to="{ name: 'explore', params: {} }"
+              :event="''"
+              @click.native.prevent.stop="navigateToExplore()">
+              Explore
+            </router-link> -->
           </div>
           <div class="header__links">
             <a>About</a>
           </div>
+        </div>
+        <div class="header__search" :class="{'home':isHome}">
+            <SearchBar small="true"></SearchBar>
         </div>
 
         <div class="menu">
@@ -35,7 +44,6 @@
 
 <script>
 import {Mediator} from '@/Mediator';
-import countries from '@/data/countries-sum-up';
 import SearchBar from '@/components/SearchBar';
 
 export default {

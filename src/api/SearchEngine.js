@@ -1,4 +1,4 @@
-import countries from '@/data/countries-sum-up';
+import countries from '@/data/countries-short';
 import distance from 'js-levenshtein';
 
 

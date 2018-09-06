@@ -4,16 +4,27 @@
   border-radius: .2rem;
   font-size: 2rem;
   background-color: rgba(255, 255, 255, .3);
-  --box-shadow: 0 0px 0px 4px rgba(255, 255, 255, 0.3);
   opacity: 0;
   transition: transform 0s, opacity 0s;
   transform: translateY(10rem);
   color: white;
 
+  @include respond(phone) {
+    margin: 2rem 2rem 0;
+    background-color: transparent;
+    border-top: solid 1px rgba(255,255,255,.3);
+    margin: 1rem 2rem 0;
+    padding: 1rem 3rem;
+  }
+
   &--show-up {
     opacity: 1;
     transform: translateY(0rem);
     transition: transform .2s, opacity .2s;
+
+    @include respond(phone) {
+      opacity: .8;
+    }
 
     .card__icon {
       transform: translateY(0rem);
@@ -27,6 +38,13 @@
     margin-bottom: 2rem;
     border-bottom: solid 1px #999;
 
+    @include respond(phone) {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
     p {
       font-size: 2.5rem;
       font-weight: lighter;
@@ -37,6 +55,10 @@
   h4 {
     font-size: 2.5rem;
     font-family: "Anton";
+    font-weight: lighter;
+    @include respond(phone) {
+      font-size: 2rem;
+    }
   }
 
   &__icon {
@@ -46,7 +68,6 @@
     font-size: 3rem;
     padding: 2rem 0;
     margin-top: -4rem;
-    background-color: #0f88b9;
     background-image: linear-gradient(130deg, darken(#76d6ff, 30%), darken(#76d6ff, 35%));
     text-align: center;
     border-radius: .2rem;
@@ -74,6 +95,15 @@
                   0 4px 20px 0 rgba(0,0,0,.12),
                   0 7px 8px -5px rgba(212, 30, 0, 0.2);
     }
+
+    @include respond(phone) {
+      width: 4rem;
+      height: 4rem;
+      background-image: none !important;
+      box-shadow: none !important;
+      padding: 0;
+      margin-top: 1rem;
+    }
   }
 
   &__more-infos {
@@ -82,5 +112,11 @@
     font-weight: lighter;
     font-family: "Helvetica neue";
     text-align: left;
+    height: 3rem;
+    overflow: hidden;
+
+    @include respond(phone) {
+        display: none;
+    }
   }
 }

@@ -38,6 +38,20 @@ export default {
     /**
      *
      */
+    navigateToExplore() {
+      if (this.$route.name == "explore") {
+        return;
+      }
+
+      this.$store.dispatch("country coming up next", null);
+      this.$transition.request("open screener").then(() => {
+          this.$router.push('/explore');
+      });
+    },
+
+    /**
+     *
+     */
     navigateToCountry(country, id) {
       if (this.$route.name == "visa-id"
       && this.$store.getters.currentCountryId == id) {

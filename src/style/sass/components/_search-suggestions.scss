@@ -14,9 +14,15 @@
 
   &--small {
     width: 32rem;
-    padding-top: 4rem;
+    padding-top: 5rem;
     border-radius: 15px;
     border: solid 1px #999;
+
+    @include respond(phone) {
+      top:0;
+      width: 100%;
+      border-radius: 0px;
+    }
   }
 
   &.fade-enter-active{
@@ -45,7 +51,7 @@
       cursor: pointer;
     }
 
-    padding: 1rem 3rem;
+    padding: 1rem 4rem;
     text-align: left;
     color: black;
     font-size: 1.5rem;

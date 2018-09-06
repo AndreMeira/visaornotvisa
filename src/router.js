@@ -1,6 +1,7 @@
 import Vue      from 'vue';
 import Router   from 'vue-router';
 import Home     from './views/Home';
+import Explore  from './views/Explore';
 import VisaInfo from './views/VisaInfo';
 
 Vue.use(Router)
@@ -12,6 +13,9 @@ export default new Router({
    *
    */
   scrollBehavior (to, from, savedPosition) {
+    if (to.name == "explore") {
+      return;
+    }
     return { x: 0, y: 0 }
   },
 
@@ -23,27 +27,19 @@ export default new Router({
       name: 'home',
       component: Home,
 
-      /**
-       *
-       */
-      beforeEnter: (to, from, next) => {
-        next();
-      }
     }, {
       path: '/visa/:name/:id',
       name: 'visa-id',
       component: VisaInfo,
 
-      /**
-       *
-       */
-      beforeEnter: (to, from, next) => {
-        next();
-      }
     }, {
       path: '/visa/:name',
       name: 'visa',
       component: Home
+    }, {
+      path: '/explore',
+      name: 'explore',
+      component: Explore
     }, {
       path: '/about',
       name: 'about',

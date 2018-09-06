@@ -5,7 +5,7 @@ body {
 .heading {
   max-width: 1200px;
   margin: auto;
-  padding: 5rem 5rem 0rem 5rem;
+  padding: 5rem;
 
   h1, h2, h3, h4 {
       font-family: "Oswald";
@@ -16,7 +16,7 @@ body {
 
   &--full {
     padding-top: 10rem;
-    padding-bottom: 5rem;
+    --padding-bottom: 5rem;
     text-align: left;
   }
 
@@ -26,11 +26,13 @@ body {
 
   h3 {
     font-size: 2.5rem;
+    text-transform: uppercase;
   }
 
   h4 {
     font-size: 1.5rem;
     color: #EE7475;
+    text-transform: uppercase;
   }
 
   p {
@@ -51,13 +53,17 @@ body {
     position: relative;
     margin-bottom: 3rem;
 
-    &:after {
+    &:before {
       content: "";
       position: absolute;
       bottom: -2.5rem;
-      border-bottom: solid .3rem;
+      border-bottom: solid .3rem white;
       width: 50%;
       left: 25%;
+
+      @include respond(phone) {
+        bottom: -1.5rem;
+      }
     }
   }
 
@@ -67,6 +73,10 @@ body {
     font-size: 2rem;
     font-weight: lighter;
     font-family: "Anton";
+
+    @include respond(phone) {
+      margin-top: 1.5rem;
+    }
   }
 }
 

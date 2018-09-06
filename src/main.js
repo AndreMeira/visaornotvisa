@@ -3,19 +3,20 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
+
 import underscore from 'vue-underscore';
 import Transition from '@/mixins/Transition';
 
 //Put this somewhere seperate
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCoffee, faIdCard, faClock, faEuroSign, faCoins } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faIdCard, faClock, faEuroSign, faCoins, faSearch, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.use(underscore);
 Vue.mixin(Transition);
 
 // Not so great
-library.add(faCoffee, faIdCard, faClock, faEuroSign, faCoins);
+library.add(faCoffee, faIdCard, faClock, faEuroSign, faCoins, faSearch, faArrowUp);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false

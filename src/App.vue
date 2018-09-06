@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <AppHeader :top="!scrolled"></AppHeader>
-    <router-view></router-view>
+    <transition :name="transition">
+      <router-view></router-view>
+    </transition>
+
 
     <screener></screener>
   </div>
@@ -16,7 +19,8 @@ export default {
 
   data() {
     return {
-      scrolled:false
+      scrolled:false,
+      transition: "",
     };
   },
 
@@ -30,6 +34,19 @@ export default {
     window.addEventListener('scroll', this.$_.debounce(() => {
       this.scrolled = window.scrollY > 500;
     }, 50));
+  },
+
+  /**
+   *
+   */
+  watch: {
+    '$route' (to, from) {
+      if (to.name === "explore") {
+        this.transition = "slide";
+      } else {
+        this.transition = "";
+      }
+    }
   }
 }
 </script>

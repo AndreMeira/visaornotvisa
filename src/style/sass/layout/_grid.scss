@@ -2,6 +2,37 @@
   // to refactor
   min-height: 30rem;
 }
+
+.article-block:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+.full-height-container {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+
+  > div {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+
+    @include respond(phone) {
+      position: relative;
+      top:10%;
+      left: 0;
+      transform: none;
+      min-height: inherit;
+    }
+  }
+}
+
 .row {
     margin: 0 auto;
     @include clearfix;

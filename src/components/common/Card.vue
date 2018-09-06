@@ -10,14 +10,14 @@
         <h4 class="card__value">{{value}}</h4>
       </div>
       <div class="card__more-infos">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+        {{info}}
       </div>
     </div>
 </template>
 <script>
 export default {
   name:"Card",
-  props:["title", "value", "color", "icon", "show"],
+  props:["title", "value", "color", "icon", "show", "info"],
 
   computed: {
     type() {

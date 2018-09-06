@@ -1,10 +1,9 @@
 <template>
   <section class="poster">
-      <div class="poster__image" :class="ready ? 'poster__image--ready' : ''" :style="poster">
-
-      </div>
-      <div class="poster-background">
-        <div class="poster-background__content">
+      <div class="poster__image" :style="poster"></div>
+      <div class="poster__mask"></div>
+      <div class="poster-heading">
+        <div class="poster-heading__content full-height-container">
           <div class="main-heading">
             <h1 class="main-heading__primary">{{title}}</h1>
             <slot name="heading-content"></slot>
@@ -26,40 +25,19 @@ export default {
 
   props: [
     "title",
-    "ready",
     "backgroundImage"
   ],
 
-  mounted() {
-  },
-
-  data () {
-    return {
-
-    };
-  },
-
+  /**
+   *
+   */
   computed:{
     poster() {
       return {"backgroundImage":'url("'+this.backgroundImage+'")'}
-    }
-  },
-
-  methods: {
-    next(evt) {
-      Mediator.$emit("next-country", {});
     }
   }
 };
 </script>
 
 <style lang="scss">
-  .poster-content {
-    position: absolute;
-    bottom: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1200px;
-    width: 100%;
-  }
 </style>
