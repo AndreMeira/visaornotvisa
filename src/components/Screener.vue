@@ -26,13 +26,14 @@ export default {
   // props:["title"],
 
   mounted() {
+    this.$transition.on("app ready", this.handleAppReady.bind(this));
     this.$transition.on("open screener", this.handleShowScreener.bind(this));
     this.$transition.on("close screener", this.handleCloseScreener.bind(this));
 
     // Let the user breath a bit ;)
-    setTimeout(() => {
-      this.initial = false;
-    }, 500);
+    // setTimeout(() => {
+    //   this.initial = false;
+    // }, 500);
   },
 
   components: {
@@ -49,10 +50,16 @@ export default {
   },
 
   methods: {
+    /**
+     *
+     */
     setScreenState(state) {
       this.screenState = state;
     },
 
+    handleAppReady(token) {
+      this.initial = false;
+    },
 
     /**
      *

@@ -1,4 +1,4 @@
-import countries from '@/data/countries-short';
+import store from '@/store/index';
 import distance from 'js-levenshtein';
 
 
@@ -18,18 +18,20 @@ export default {
       if (!v) {
         return resolve({search:v, result:[]});
       }
-      let result = [];
-      let search = this.normalize(v);
 
-      this.testWithAlgorithm(countries.countries, search, result, this.exact);
+      let result    = [];
+      let countries = store.getters.countriesShort;
+      let search    = this.normalize(v);
+
+      this.testWithAlgorithm(countries, search, result, this.exact);
 
       if (result.length == 1) {
-        return result;
+        return resolve({search:v, result:result});
       }
 
-      !this.testWithAlgorithm(countries.countries, search, result, this.countryStartWith) &&
-      !this.testWithAlgorithm(countries.countries, search, result, this.levenshtein)      &&
-      !this.testWithAlgorithm(countries.countries, search, result, this.countryContains);
+      !this.testWithAlgorithm(countries, search, result, this.countryStartWith) &&
+      !this.testWithAlgorithm(countries, search, result, this.levenshtein)      &&
+      !this.testWithAlgorithm(countries, search, result, this.countryContains);
 
       resolve({search:v, result});
     });

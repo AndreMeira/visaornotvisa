@@ -15,15 +15,21 @@ export default {
    *
    */
   query (q) {
-    return 	this.client().then(function(api) {
+    return this.client().then(function(api) {
       // An empty query will return all the documents
       return api.query(q);
     });
   },
 
   getByID(id) {
-    return	this.client().then(function(api) {
+    return this.client().then(function(api) {
       return api.getByID(id);
+    });
+  },
+
+  getAllCountriesShortDesc() {
+    return this.client().then((api) => {
+        return api.query("", { pageSize : 600});
     });
   }
 }
