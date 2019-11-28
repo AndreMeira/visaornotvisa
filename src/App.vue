@@ -31,7 +31,7 @@ export default {
   },
 
   beforeMount() {
-    window.addEventListener('scroll', this.$_.debounce(() => {
+    window && window.addEventListener('scroll', this.$_.debounce(() => {
       this.scrolled = window.scrollY > 500;
     }, 50));
 
@@ -50,7 +50,7 @@ export default {
    *
    */
   watch: {
-    '$route' (to, from) {
+    '$route' (to, /*from*/) {
       if (to.name === "explore") {
         this.transition = "slide";
       } else {
