@@ -4,8 +4,6 @@
     <transition :name="transition">
       <router-view></router-view>
     </transition>
-
-
     <screener></screener>
   </div>
 </template>
