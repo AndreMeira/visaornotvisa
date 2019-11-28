@@ -179,5 +179,6 @@ export default {
   padding: 0 1rem;
   font-size: 1rem;
   opacity: 0;
+  position:absolute;
 }
 </style>

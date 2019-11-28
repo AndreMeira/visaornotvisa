@@ -4,11 +4,6 @@ import actions from './actions';
 import mutations from './mutations';
 import getters from './getters';
 
-/**
- * Data
- */
-import countries from '@/data/countries-short';
-
 export default {
 
   /**
@@ -16,11 +11,11 @@ export default {
    */
   state: {
     comingUp:null,
-    current:null,
-    loading:[],
-    articles:[],
-    areas:countries.areas,
-    summaries:countries.countries,
+    current: null,
+    shortDesc: [],
+    articles:  [],
+    areas:     [],
+    summaries: [],
   },
 
   /**

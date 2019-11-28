@@ -15,6 +15,10 @@ export default {
     });
   },
 
+  inform(evt, options = {}) {
+    return this.request(evt, options);
+  },
+
   on(transitionName, c) {
     bus.$on(transitionName, c);
   }

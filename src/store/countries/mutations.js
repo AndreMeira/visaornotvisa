@@ -36,5 +36,19 @@ export default {
     }
 
     this.articles = articles;
+  },
+
+  /**
+   *
+   */
+  "set country summaries" (state, summaries) {
+    state.summaries = summaries;;
+  },
+
+  /**
+   *
+   */
+  "set country areas" (state, areas) {
+    state.areas = areas;
   }
 }

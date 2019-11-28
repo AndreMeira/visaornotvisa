@@ -17,12 +17,6 @@
               :to="{ name: 'explore', params: {} }">
               Explore
             </router-link>
-            <!-- <router-link
-              :to="{ name: 'explore', params: {} }"
-              :event="''"
-              @click.native.prevent.stop="navigateToExplore()">
-              Explore
-            </router-link> -->
           </div>
           <div class="header__links">
             <a>About</a>

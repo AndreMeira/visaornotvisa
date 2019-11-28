@@ -44,5 +44,34 @@ export default {
         }
       })
     });
+  },
+
+  "load countries summary" (context) {
+    return new Promise((resolve, reject) => {
+      API.getAllCountriesShortDesc().then((r) => {
+        if (r) {
+          let areas = [];
+          let countries = [];
+
+          r.results.forEach((c) => {
+            if (!areas.includes(c.data.region)) {
+              areas.push(c.data.region);
+            };
+
+            countries.push({
+              id:c.id,
+              title: c.data.name[0].text,
+              img: c.data.image.url,
+              region:areas.indexOf(c.data.region),
+              alt:""
+            });
+
+          });
+          context.commit("set country summaries", countries);
+          context.commit("set country areas", areas);
+          resolve({countries, areas});
+        }
+      });
+    });
   }
 }
